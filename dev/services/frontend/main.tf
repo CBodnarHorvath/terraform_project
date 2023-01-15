@@ -25,7 +25,7 @@ user_data = templatefile("user-data.sh", {
 }
 
 resource "aws_security_group" "instance" {
-  name = "techsecops-exercise-instance"
+  name = "techsecops-exercise-instance-${var.commit_hash}"
   ingress {
     from_port   = var.server_port
     to_port     = 443
@@ -40,6 +40,6 @@ resource "aws_security_group" "instance" {
   cidr_blocks = ["0.0.0.0/0"]
  }
  lifecycle {
-  create_before_destroy = true
- }
+      create_before_destroy = true
+  }
 }
