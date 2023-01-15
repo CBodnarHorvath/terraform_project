@@ -39,6 +39,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-southeast-1
         token: ${{secrets.PAT}}
+        auto_approve: true
     - name: Setup Terraform CLI
       uses: hashicorp/setup-terraform@v2.0.2
 
