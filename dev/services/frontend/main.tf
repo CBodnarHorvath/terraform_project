@@ -29,3 +29,12 @@ user_data = templatefile("user-data.sh", {
   Name = "techsecops-exercise"
  }
 }
+
+resource "aws_eip" "myeip" {
+  vpc      = true
+}
+
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = aws_instance.techsecops-exercise.id
+  allocation_id = aws_eip.myeip.id
+}
