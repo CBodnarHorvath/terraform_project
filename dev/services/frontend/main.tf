@@ -30,7 +30,11 @@ user_data = templatefile("user-data.sh", {
  }
 }
 
+data "aws_eip" "myeip" {
+  public_ip = "52.221.8.118"
+}
+
 resource "aws_eip_association" "eip_assoc" {
   instance_id   = aws_instance.techsecops-exercise.id
-  allocation_id = eipassoc-01899d6238499fca0
+  allocation_id = data.aws_eip.myeip.id
 }
