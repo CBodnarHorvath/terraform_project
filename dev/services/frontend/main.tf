@@ -10,6 +10,12 @@ variable "sg" {
   default     = [ "sg-08221f64b86654391" ]
 }
 
+variable "elastic_ip" {
+  description = "The elastic ip address"
+  type        = string
+  default     = "52.221.8.118"
+}
+
 provider "aws" {
  region = "ap-southeast-1"
 }
@@ -31,7 +37,7 @@ user_data = templatefile("user-data.sh", {
 }
 
 data "aws_eip" "myeip" {
-  public_ip = "52.221.8.118"
+  public_ip = var.elastic_ip
 }
 
 resource "aws_eip_association" "eip_assoc" {
