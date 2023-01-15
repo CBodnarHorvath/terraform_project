@@ -4,6 +4,12 @@ variable "server_port" {
   default     = 80
 }
 
+variable "sg" {
+  description = "List of Security Group IDs"
+  type        = list(string)
+  default     = [ "sg-08221f64b86654391" ]
+}
+
 provider "aws" {
  region = "ap-southeast-1"
 }
@@ -11,7 +17,7 @@ provider "aws" {
 resource "aws_instance" "techsecops-exercise" {
  ami	= "ami-005835d578c62050d"
  instance_type = "t2.micro"
- vpc_security_group_ids = [aws_security_group.instance.id]
+ vpc_security_group_ids = var.sg
 
 user_data = templatefile("user-data.sh", {
     server_port = var.server_port
@@ -22,24 +28,4 @@ user_data = templatefile("user-data.sh", {
  tags = {
   Name = "techsecops-exercise"
  }
-}
-
-resource "aws_security_group" "instance" {
-  name = "techsecops-exercise-instance-${var.commit_hash}"
-  ingress {
-    from_port   = var.server_port
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-    ipv6_cidr_blocks  = ["::/0"]
-  }
-  egress {
-  from_port   = 0
-  to_port     = 0
-  protocol    = "-1"
-  cidr_blocks = ["0.0.0.0/0"]
- }
- lifecycle {
-      create_before_destroy = true
-  }
 }
