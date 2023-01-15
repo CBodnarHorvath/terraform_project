@@ -10,7 +10,7 @@ on:
     inputs:
       tfpath:
         description: 'TF File Path'     
-        required: false
+        required: true
         default: 'dev/services/frontend'
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
@@ -24,7 +24,7 @@ jobs:
     name: Terraform Validation and Build
     runs-on: ubuntu-latest
     
-    #if:  ${{ inputs.tfpath }}
+    if:  ${{ inputs.tfpath }}
     permissions:
      id-token: write
      contents: read
