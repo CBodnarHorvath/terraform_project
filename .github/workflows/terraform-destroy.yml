@@ -40,10 +40,10 @@ jobs:
     - name: Terraform init, plan and apply
       run: |
          echo `pwd`
-         echo "tfpath ${{ github.event.inputs.tfpath }}"
          echo "** Running Terraform Init**"
          terraform init
          
          echo "** Running Terraform Destroy**"
          terraform plan -destroy
          terraform destroy -auto-approve
+      working-directory: dev/services/frontend
