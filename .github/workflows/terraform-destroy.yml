@@ -1,0 +1,57 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      tfpath:
+        description: 'TF File Path'     
+        required: true
+        default: 'dev/services/frontend'
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  tf_code_check:
+    name: Terraform Validation and Build
+    runs-on: ubuntu-latest
+    
+    permissions:
+     id-token: write
+     contents: read
+    steps:
+    - uses: actions/checkout@v2.5.0
+
+    - name: Configure AWS Credentials Action For GitHub Actions
+      uses: aws-actions/configure-aws-credentials@master
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-southeast-1
+        token: ${{secrets.PAT}}
+        auto_approve: true
+        
+    - name: Setup Terraform CLI
+      uses: hashicorp/setup-terraform@v2.0.2
+
+    - name: Terraform init, plan and apply
+      run: |
+         echo `pwd`
+         echo "tfpath ${{ github.event.inputs.tfpath }}"
+         echo "** Running Terraform Init**"
+         terraform init
+        
+    - name: Terraform Destroy
+      run: |
+         echo "** Running Terraform Destroy**"
+         terraform plan -destroy
+         terraform destroy -auto-approve
+      working-directory: dev/services/frontend
