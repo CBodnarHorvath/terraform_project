@@ -1,23 +1,6 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -30,9 +13,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/CBodnarHorvath/terraform_project">
+  <!-- <a href="https://github.com/CBodnarHorvath/terraform_project">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  </a> -->
 
   <h3 align="center">TechSecOps Terraform Project</h3>
 
@@ -70,8 +53,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 This is a terraform project from Charles and Tin where we look to manage the state of our Infrastructure as Code (IAC) along with CI/CD handle all our deployment needs
 
@@ -118,7 +99,7 @@ Then use brew to install Terraform
 
 ### Installation
 
-1. Clone the repo
+Clone the repo
    ```sh
    git clone git@github.com:CBodnarHorvath/terraform_project.git
    ```
@@ -167,9 +148,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - - cbodnarhorvath@palo-it.com
+Charles Bodnar-Horvath - - cbodnarhorvath@palo-it.com
+Tin Yu                 - - tyu@palo-it.com
 
-Project Link: [https://github.com/CBodnarHorvath/terraform_project](https://github.com/CBodnarHorvath/terraform_project)
+[https://github.com/CBodnarHorvath/terraform_project](https://github.com/CBodnarHorvath/terraform_project)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -193,18 +175,16 @@ Project Link: [https://github.com/CBodnarHorvath/terraform_project](https://gith
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/CbodnarHorvath/terraform_project.svg?style=for-the-badge
+[contributors-url]: https://github.com/CBodnarHorvath/terraform_project/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/CbodnarHorvath/terraform_project.svg?style=for-the-badge
+[forks-url]: https://github.com/CbodnarHorvath/terraform_project.svg/network/members
+[stars-shield]: https://img.shields.io/github/stars/CbodnarHorvath/terraform_project.svg?style=for-the-badge
+[stars-url]: https://github.com/CBodnarHorvath/terraform_project/stargazers
+[issues-shield]: https://img.shields.io/github/issues/CbodnarHorvath/terraform_project.svg?style=for-the-badge
+[issues-url]: https://github.com/CBodnarHorvath/terraform_project/issues
+[license-shield]: https://img.shields.io/github/license/CbodnarHorvath/terraform_project.svg?style=for-the-badge
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
