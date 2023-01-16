@@ -149,6 +149,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Charles Bodnar-Horvath - - cbodnarhorvath@palo-it.com
+
 Tin Yu                 - - tyu@palo-it.com
 
 [https://github.com/CBodnarHorvath/terraform_project](https://github.com/CBodnarHorvath/terraform_project)
