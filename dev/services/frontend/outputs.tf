@@ -1,9 +1,4 @@
-output "ec2_ip" {
-  value       = aws_instance.techsecops-exercise.public_ip
-  description = "The public IP address of the web server"
-}
-
-output "elastic_ip" {
-  description = "Contains the public IP address"
-  value       = var.elastic_ip
+output "alb_dns_name" {
+  value       = aws_lb.techsecops.dns_name
+  description = "The domain name of the load balancer"
 }
