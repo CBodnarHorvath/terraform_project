@@ -44,7 +44,7 @@ resource "aws_autoscaling_group" "techsecops-exercise" {
 }
 
 resource "aws_lb" "techsecops" {
-  name               = "techsecops-terraform-asg"
+  name_prefix               = "techsecops-terraform-lb"
   load_balancer_type = "application"
   subnets            = data.aws_subnets.techsecops.ids
   security_groups    = [aws_security_group.alb.id]
