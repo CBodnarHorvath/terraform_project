@@ -17,9 +17,6 @@ resource "aws_launch_configuration" "techsecops-exercise" {
     server_port = var.server_port
   })
 
-   lifecycle {
-    create_before_destroy = true
-  }
 }
 
 data "aws_vpc" "techsecops" {
