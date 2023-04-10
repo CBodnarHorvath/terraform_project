@@ -17,6 +17,9 @@ resource "aws_launch_configuration" "techsecops-exercise" {
     server_port = var.server_port
   })
 
+   lifecycle {
+    create_before_destroy = true
+  }
 }
 
 data "aws_vpc" "techsecops" {
@@ -72,7 +75,7 @@ data "aws_subnets" "techsecops" {
 }
 
 resource "aws_security_group" "alb" {
-  name = "techsecops-exercise-new"
+  name_prefix = "techsecops-exercise-new"
   # Allow inbound HTTP requests
   ingress {
     from_port   = 80
